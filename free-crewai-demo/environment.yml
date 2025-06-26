@@ -1,0 +1,10 @@
+name: crewai-free-demo
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+    - crewai>=0.28.8
+    - langchain-ollama>=0.1.0 

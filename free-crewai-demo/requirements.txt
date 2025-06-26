@@ -1,0 +1,14 @@
+# FREE CrewAI Demo Requirements
+# Minimal dependencies for local AI demo
+
+# Core CrewAI framework
+crewai>=0.28.8
+
+# Local AI support via Ollama (updated package)
+langchain-ollama>=0.1.0
+
+# Streamlit for web app interface
+streamlit>=1.28.0
+
+# No API keys required!
+# This setup uses 100% free local models 
