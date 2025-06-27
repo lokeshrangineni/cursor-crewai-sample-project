@@ -1,5 +1,5 @@
 #!/bin/bash
-# Conda Environment Setup for FREE CrewAI Demo
+# Conda Environment Setup for Local Model CrewAI Demo
 # Creates and activates: crewai-free-demo
 
 set -e  # Exit on any error
@@ -7,7 +7,7 @@ set -e  # Exit on any error
 CONDA_ENV_NAME="crewai-free-demo"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "🆓 FREE CrewAI Demo - Conda Environment Setup"
+echo "🏠 Local Model CrewAI Demo - Environment Setup"
 echo "=============================================="
 echo "Environment: $CONDA_ENV_NAME"
 echo "Location: $SCRIPT_DIR"
@@ -23,33 +23,63 @@ fi
 
 echo "✅ Conda found: $(conda --version)"
 
+echo ""
+echo "🔧 Setting up conda environment: $CONDA_ENV_NAME"
+
 # Check if environment already exists
 if conda env list | grep -q "^$CONDA_ENV_NAME "; then
     echo "✅ Environment '$CONDA_ENV_NAME' already exists"
-    echo "🔄 Updating environment from environment.yml..."
-    conda env update -n "$CONDA_ENV_NAME" -f environment.yml
+    echo "🔄 Updating environment..."
+    
+    # Update the environment
+    conda env update -n $CONDA_ENV_NAME -f environment.yml --prune
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ Environment updated successfully"
+    else
+        echo "❌ Failed to update environment"
+        exit 1
+    fi
 else
-    echo "📦 Creating conda environment from environment.yml..."
+    echo "🆕 Creating new environment..."
+    
+    # Create new environment
     conda env create -f environment.yml
-    echo "✅ Environment created successfully"
+    
+    if [ $? -eq 0 ]; then
+        echo "✅ Environment created successfully"
+    else
+        echo "❌ Failed to create environment"
+        exit 1
+    fi
 fi
 
-# Activate environment
 echo ""
-echo "🔄 Activating environment: $CONDA_ENV_NAME"
-source "$(conda info --base)/etc/profile.d/conda.sh"
-conda activate "$CONDA_ENV_NAME"
+echo "🎯 Activating environment..."
 
-if [[ "$CONDA_DEFAULT_ENV" == "$CONDA_ENV_NAME" ]]; then
-    echo "✅ Environment activated: $CONDA_DEFAULT_ENV"
+# Activate the environment
+conda activate $CONDA_ENV_NAME
+
+if [ $? -eq 0 ]; then
+    echo "✅ Environment activated: $CONDA_ENV_NAME"
 else
     echo "❌ Failed to activate environment"
+    echo "💡 Try manually: conda activate $CONDA_ENV_NAME"
     exit 1
 fi
 
-# Dependencies are already installed via conda environment.yml
 echo ""
-echo "✅ Dependencies installed via conda environment"
+echo "📦 Installing additional dependencies..."
+
+# Install additional dependencies via pip
+pip install -r requirements.txt --quiet
+
+if [ $? -eq 0 ]; then
+    echo "✅ Dependencies installed successfully"
+else
+    echo "❌ Failed to install dependencies"
+    exit 1
+fi
 
 # Check if Ollama is installed
 echo ""
@@ -58,11 +88,11 @@ if command -v ollama &> /dev/null; then
     echo "✅ Ollama is installed: $(ollama --version 2>/dev/null || echo 'version unknown')"
     
     # Check if model is available
-    if ollama list | grep -q "llama3.2:3b"; then
-        echo "✅ Llama 3.2 3B model is ready"
+    if ollama list | grep -q "mistral:latest"; then
+        echo "✅ Mistral model is ready"
         MODEL_READY=true
     else
-        echo "⚠️  Llama 3.2 3B model not found"
+        echo "⚠️  Mistral model not found"
         MODEL_READY=false
     fi
 else
@@ -77,10 +107,11 @@ echo "🐍 Environment: $CONDA_ENV_NAME (Python $(python --version 2>&1 | cut -d
 echo "📦 Dependencies: Installed"
 
 if [[ "$MODEL_READY" == true ]]; then
-    echo "🤖 AI Model: Ready (Llama 3.2 3B)"
+    echo "🤖 AI Model: Ready (Mistral)"
     echo ""
-    echo "🚀 Ready to run FREE demo:"
-    echo "   python crewai_free_demo.py"
+    echo "🚀 Ready to run demo:"
+    echo "   python crewai_free_demo.py      # Command line"
+    echo "   streamlit run streamlit_app.py  # Web interface"
 else
     echo "🤖 AI Model: Not ready"
     echo ""

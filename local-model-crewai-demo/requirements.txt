@@ -1,4 +1,4 @@
-# FREE CrewAI Demo Requirements
+# Local Model CrewAI Demo Requirements
 # Minimal dependencies for local AI demo
 
 # Core CrewAI framework

@@ -1,6 +1,6 @@
-# 🆓 FREE CrewAI Demo Project
+# 🏠 Local Model CrewAI Demo Project
 
-**The complete guide to exploring CrewAI with 100% free local AI - no API keys required!**
+**The complete guide to exploring CrewAI with local AI models - no API keys required!**
 
 [![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
 [![Ollama](https://img.shields.io/badge/AI-Ollama-green.svg)](https://ollama.com/)
@@ -26,7 +26,7 @@ This project provides **two different ways** to explore CrewAI:
 ```bash
 # Clone the repository (if not already done)
 git clone <your-repo-url>
-cd free-crewai-demo
+cd local-model-crewai-demo
 
 # Make setup script executable and run it
 chmod +x activate_install_dependencies.sh
@@ -203,7 +203,7 @@ streamlit run streamlit_app.py
 ## 📁 Project Structure
 
 ```
-free-crewai-demo/
+local-model-crewai-demo/
 ├── 🚀 DEMOS
 │   ├── streamlit_app.py          # Web interface demo
 │   └── crewai_free_demo.py       # Command-line demo
@@ -298,4 +298,4 @@ python crewai_free_demo.py
 
 **🎯 Questions? Issues? Check `STREAMLIT_README.md` for detailed web app instructions!**
 
-*Enjoy your free, private, powerful AI development environment!* 🚀 
+*Enjoy your local, private, powerful AI development environment!* 🚀 

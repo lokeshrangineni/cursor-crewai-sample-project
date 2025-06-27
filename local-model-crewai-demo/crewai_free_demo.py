@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """
-FREE CrewAI Demo - Ollama + Llama 3.2 3B
-========================================
+Local Model CrewAI Demo - Ollama + Mistral
+==========================================
 
-The BEST free alternative to paid AI APIs:
+CrewAI demonstration using local AI models:
 ✅ 100% Free - No API keys or billing required
 ✅ Reliable - Runs locally, no internet dependency  
-✅ Low Resources - Only 3GB RAM needed
-✅ Great Quality - Meta's latest Llama 3.2 model
+✅ Low Resources - Only 4GB RAM needed
+✅ Great Quality - Uses Mistral AI model
 ✅ Privacy - Your data stays on your machine
 
 Perfect for learning CrewAI without any costs!
@@ -39,7 +39,7 @@ def check_ollama_setup():
         
         print("\n🚀 QUICK FIX GUIDE:")
         print("1. Install Ollama: https://ollama.com/download")
-        print("2. Download model: ollama pull llama3.2:3b")
+        print("2. Download model: ollama pull mistral:latest")
         print("3. Start service: ollama serve")
         print("4. Re-run this demo")
         
@@ -128,7 +128,7 @@ Use proper markdown formatting with headers, bullet points, and clear sections."
             verbose=False
         )
         
-        print("🚀 Starting FREE AI workflow...")
+        print("🚀 Starting local AI workflow...")
         print("⏱️  This may take 1-2 minutes with local processing...")
         print()
         
@@ -163,7 +163,7 @@ Use proper markdown formatting with headers, bullet points, and clear sections."
             f.write(f"title: {topic} Research Report\n")
             f.write("generated_by: Research Specialist\n")
             f.write("date: " + str(__import__('datetime').datetime.now().strftime("%Y-%m-%d %H:%M:%S")) + "\n")
-            f.write("model: Ollama + Mistral (Free Local AI)\n")
+            f.write("model: Ollama + Mistral (Local AI)\n")
             f.write("---\n\n")
             
             # Write the research content (should already be well-formatted markdown)
@@ -171,7 +171,7 @@ Use proper markdown formatting with headers, bullet points, and clear sections."
             
             # Add footer
             f.write("\n\n---\n")
-            f.write("*This report was generated using free local AI (Ollama + Mistral)*\n")
+            f.write("*This report was generated using local AI (Ollama + Mistral)*\n")
         
         print(f"📁 Research report saved to: {filename}")
         
@@ -193,14 +193,14 @@ Use proper markdown formatting with headers, bullet points, and clear sections."
         return False, None, None, None
 
 def main(topic=None):
-    """Run the FREE CrewAI demo with local AI.
+    """Run the Local Model CrewAI demo with local AI.
     
     Args:
         topic (str, optional): Research topic. If None, will prompt user for input.
     """
     
-    print("🆓 FREE CrewAI Demo - No API Costs!")
-    print("=" * 40)
+    print("🏠 Local Model CrewAI Demo - No API Costs!")
+    print("=" * 42)
     print("Using: Ollama + Mistral (Local AI)")
     print()
     
@@ -222,7 +222,7 @@ def main(topic=None):
     
     if success:
         print("\n" + "="*50)
-        print("✅ FREE CrewAI Demo Completed!")
+        print("✅ Local Model CrewAI Demo Completed!")
         print("="*50)
         print("📋 RESEARCH REPORT:")
         print("-" * 40)

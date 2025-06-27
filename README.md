@@ -7,8 +7,8 @@
 
 ## 📁 Available Examples
 
-### 🆓 [Free CrewAI Demo](./free-crewai-demo/)
-**100% free local AI - no API keys required**
+### 🏠 [Local Model CrewAI Demo](./local-model-crewai-demo/)
+**CrewAI with local AI models - no API keys required**
 
 - **🌐 Web Interface** - Streamlit app with real-time progress
 - **🖥️ Command Line** - Interactive research tool
@@ -17,14 +17,14 @@
 
 **Quick Start:**
 ```bash
-cd free-crewai-demo
+cd local-model-crewai-demo
 source activate_install_dependencies.sh
 ./setup_ollama.sh
 streamlit run streamlit_app.py  # Web interface
 ```
 
-📚 **Detailed Instructions**: See [`free-crewai-demo/README.md`](./free-crewai-demo/README.md)  
-🌐 **Web App Guide**: See [`free-crewai-demo/STREAMLIT_README.md`](./free-crewai-demo/STREAMLIT_README.md)
+📚 **Detailed Instructions**: See [`local-model-crewai-demo/README.md`](./local-model-crewai-demo/README.md)  
+🌐 **Web App Guide**: See [`local-model-crewai-demo/STREAMLIT_README.md`](./local-model-crewai-demo/STREAMLIT_README.md)
 
 ---
 

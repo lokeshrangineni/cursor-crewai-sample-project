@@ -1,9 +1,9 @@
 #!/bin/bash
-# ONE-CLICK Setup for FREE CrewAI Demo
+# ONE-CLICK Setup for Local Model CrewAI Demo
 # Installs Ollama + Mistral for completely free AI
 
-echo "🆓 FREE CrewAI Demo Setup"
-echo "========================"
+echo "🏠 Local Model CrewAI Demo Setup"
+echo "================================"
 echo "Installing: Ollama + Mistral (100% Free)"
 echo ""
 
