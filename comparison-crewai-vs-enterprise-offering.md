@@ -18,6 +18,18 @@ CrewAI offers a powerful open-source agent orchestration framework and a feature
 
 ---
 
+
+## Memory and Fault Tolerance: CrewAI Open Source vs Enterprise
+
+| Aspect                      | CrewAI Open Source (Free)                         | CrewAI Enterprise                                  |
+|-----------------------------|-------------------------------------------------|---------------------------------------------------|
+| **Memory Management**        | - Provides memory interfaces and abstractions (e.g., vector memory helpers).<br>- Requires developers to implement memory persistence and integration (PostgreSQL, Chroma, etc.).<br>- No built-in automated lifecycle management (aging, pruning). | - Includes managed, production-ready memory layers.<br>- Automated memory lifecycle, pruning, and summarization.<br>- Built-in support for hybrid memory tiers with seamless persistence.<br>- Integrated UI/tools for memory management and inspection. |
+| **Fault Tolerance**          | - No built-in fault tolerance for memory persistence.<br>- Developers must handle durability, recovery, and retry logic.<br>- Relies on external infrastructure setup for replication and backups.<br>- No native multi-node state synchronization. | - Offers enterprise-grade fault tolerance with automatic failover.<br>-
+
+
+
+
+
 ## 📚 References
 
 - [Enterprise Edition Overview](https://crewai.com/enterprise)
@@ -28,11 +40,21 @@ CrewAI offers a powerful open-source agent orchestration framework and a feature
 - [Techstrong.ai – CrewAI Enterprise Launch](https://techstrong.ai/articles/crewai-makes-enterprise-edition-of-ai-agent-management-platform-available/)
 - [Reddit Thread on Open-Source Capabilities](https://www.reddit.com/r/crewai/comments/1div4qp/)
 - [Limitations of Crew AI](https://smythos.com/developers/agent-comparisons/appian-vs-crewai/)
+- [Crew AI Memory](https://docs.crewai.com/en/concepts/memory)
 
 ---
 
-## ✅ Summary
+### Summary
 
-Use **Open-Source** if you want flexibility, customization, and self-hosting with zero licensing cost. 
-Choose **Enterprise** if you're building production-grade agent applications and need scalability, integrations with common tools,  monitoring, compliance, and support out of the box.
+- **Choose Open Source CrewAI if:**
+  - You want full control and flexibility over your app’s memory, infrastructure, and code.
+  - You have a small team or are building a prototype or learning project.
+  - You don’t mind setting up and maintaining databases, vector stores, and fault tolerance yourself.
+  - You prefer a DIY approach and have the engineering resources to manage infrastructure.
 
+- **Choose Enterprise CrewAI if:**
+  - You want a ready-to-use, managed memory system with built-in fault tolerance.
+  - You need production-grade reliability, scalability, and high availability out of the box.
+  - You want to focus on building your app without worrying about infrastructure complexity.
+  - You require SLAs, official support, and guarantees for uptime.
+  - You’re running large-scale, mission-critical AI applications and need peace of mind.
